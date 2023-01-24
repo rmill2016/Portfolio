@@ -5,14 +5,96 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 
-/* Custom Style Imports */
-@import '_typography.css';
-
 /* Tailwind Utilities */
 @import 'tailwindcss/utilities';
 
+@layer components {
+  body {
+    @apply font-montserrat text-black;
+  }
 
-/* Simple defaults */
-body {
-  @apply font-sans antialiased text-black bg-white;
+  section {
+    @apply w-full h-screen px-8 md:px-16 2xl:px-32;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  header {
+    @apply px-8 md:px-16 2xl:px-32;
+  }
+
+  button.filled {
+    @apply bg-teal py-2 pl-6 rounded-full rounded-tl-none w-fit after:caret-right-white pr-10 hover:shadow-teal hover:shadow-sm;
+  }
+  button.outlined {
+    @apply bg-transparent border border-white rounded-full rounded-tl-none py-2 pl-6 pr-10 after:caret-right-clear text-white;
+  }
+  p {
+    @apply text-base md:text-lg;
+  }
+  h6 {
+    @apply text-lg md:text-2xl;
+  }
+  h5 {
+    @apply text-2xl md:text-3xl;
+  }
+  h4 {
+    @apply text-3xl md:text-4xl;
+  }
+  h3 {
+    @apply text-4xl md:text-5xl;
+  }
+  h2 {
+    @apply text-5xl md:text-6xl;
+  }
+  h1 {
+    @apply text-6xl md:text-7xl;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .caret-right-white {
+    position: absolute;
+    border-radius: 999px;
+    width: 24px;
+    aspect-ratio: 1;
+    content: '';
+    background: url('../public/assets/caret-right.svg') white center no-repeat;
+    display: inline-block;
+    margin-left: 8px;
+    z-index: 0;
+  }
+  .caret-right-clear {
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 999px;
+    width: 24px;
+    aspect-ratio: 1;
+    content: '';
+    background: url('../public/assets/caret-right-white.svg') center no-repeat;
+    display: inline-block;
+    margin-left: 8px;
+  }
+  .link-t-b {
+    @apply inline-block relative after:content-[''] after:block after:m-auto after:h-px after:w-0 after:bg-transparent after:duration-300 hover:after:w-full hover:after:bg-teal before:content-[''] before:block before:m-auto before:h-px before:w-0 before:bg-transparent before:duration-300 hover:before:w-full hover:before:bg-teal;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d3d3d3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00d1cd;
+  border-radius: 99px;
+  min-height: 40px;
 }

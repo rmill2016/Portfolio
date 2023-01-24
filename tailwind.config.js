@@ -10,17 +10,23 @@ module.exports = {
       '2xl': '1440px',
       '3xl': '1920px',
     },
-    colors: {
-      teal: '#00D1CD',
-      dark: '#111827',
-      black: '#000',
-      white: '#fff',
-      gray: {
-        500: '#C2C2C2',
-      },
-      blue: '#D2ECFA',
+    fontFamily: {
+      montserrat: ['Montserrat, san-serif'],
+      hind: ['Hind Madurai, san-serif'],
+      lora: ['Lora, san-serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        teal: '#00D1CD',
+        dark: '#111827',
+        gray: {
+          50: '#C2C2C2',
+        },
+        blue: {
+          50: '#D2ECFA',
+        },
+      },
+    },
   },
   plugins: [],
 }
