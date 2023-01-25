@@ -22,6 +22,10 @@
     @apply px-8 md:px-16 2xl:px-32;
   }
 
+  nav {
+    @apply max-w-screen-2xl mx-auto;
+  }
+
   button.filled {
     @apply bg-teal py-2 pl-6 rounded-full rounded-tl-none w-fit after:caret-right-white pr-10 hover:shadow-teal hover:shadow-sm;
   }
