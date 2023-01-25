@@ -17,7 +17,6 @@ const menuVariants = {
     transition: {
       type: 'tween',
       duration: 0.5,
-      origin: 'center',
     },
   },
 }
@@ -98,7 +97,9 @@ const Header = () => {
         entries.forEach((entry) => {
           let inverted = false
           if (entry.isIntersecting) {
-            inverted = true
+            if (entry.intersectionRatio < 0.9) {
+              inverted = true
+            }
           }
           if (inverted) {
             desktopLinks.current.classList.remove('text-white')
@@ -165,7 +166,7 @@ const Header = () => {
         <AnimatePresence>
           {open && (
             <motion.aside
-              className="fixed top-0 right-0 bg-dark w-full h-screen grid grid-rows-[80px_1fr] grid-flow-row"
+              className="fixed top-0 right-0 bg-dark w-full h-screen grid grid-rows-[80px_1fr] grid-flow-row origin-top-right"
               variants={menuVariants}
               initial="hidden"
               animate="visible"
