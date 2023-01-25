@@ -21,7 +21,21 @@ export const leftItems = {
     transition: {
       type: 'spring',
       stiffness: 100,
-      ease: 'ease-in-out',
+    },
+  },
+}
+
+export const bounceUp = {
+  hide: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
     },
   },
 }

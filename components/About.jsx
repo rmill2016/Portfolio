@@ -32,7 +32,7 @@ const About = () => {
         style={{ clipPath: 'polygon(0% 0%, 80% 0, 100% 100%, 0 100%)' }}
       ></div>
       <AnimatePresence>
-        <div className="grid grid-rows-2 grid-flow-row lg:grid-cols-[700px_1fr] lg:grid-flow-col w-full h-full place-content-center md:items-center lg:justify-between lg:grid-rows-none">
+        <div className="grid grid-rows-2 grid-flow-row lg:grid-cols-[700px_1fr] lg:grid-flow-col w-full h-full place-content-center md:items-center lg:justify-between lg:grid-rows-none max-w-screen-2xl mx-auto ">
           <motion.div
             className="w-full h-full "
             initial={{ y: 20, opacity: 0 }}

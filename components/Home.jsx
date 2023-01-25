@@ -1,17 +1,22 @@
-import { motion } from 'framer-motion'
-import { staggerLeft, leftItems } from '@/helpers/transitions'
+import { motion, useInView } from 'framer-motion'
+import { staggerLeft, leftItems, bounceUp } from '@/helpers/transitions'
+import React, { useEffect, useRef } from 'react'
 
 const Home = () => {
+  const container = useRef(null)
+  const target = useRef(null)
+  const isInView = useInView(target, { root: container.current, amount: 0.5, margin: '-10% 0px 90% 0px' })
   return (
-    <section className="bg-dark">
-      <div className="w-full h-full flex flex-col justify-around lg:grid lg:grid-cols-[1fr_700px] lg:grid-flow-col">
+    <section ref={container} className="bg-dark">
+      <div
+        className="w-full h-full flex flex-col justify-around lg:grid lg:grid-cols-[1fr_700px] lg:grid-flow-col max-w-screen-2xl mx-auto"
+        ref={target}
+      >
         <motion.div
           className="flex flex-col justify-center items-start w-full h-full gap-4 pt-20 relative lg:pb-40 lg:gap-8"
           variants={staggerLeft}
           initial="hide"
-          animate="show"
-          onAnimationStart={() => (document.body.style.overflow = 'hidden')}
-          onAnimationComplete={() => (document.body.style.overflow = 'visible')}
+          animate={isInView ? 'show' : 'hide'}
         >
           <motion.p className="text-white inline-flex items-center gap-3" variants={leftItems}>
             {' '}
@@ -20,14 +25,18 @@ const Home = () => {
               alt="wave"
               className="h-8"
               initial={{}}
-              animate={{
-                rotateZ: [-10, 0],
-                transition: {
-                  delay: 1,
-                  repeat: 2,
-                  duration: 0.5,
-                },
-              }}
+              animate={
+                isInView
+                  ? {
+                      rotateZ: [-10, 0],
+                      transition: {
+                        delay: 1,
+                        repeat: 2,
+                        duration: 0.5,
+                      },
+                    }
+                  : {}
+              }
             />
             Hello!
           </motion.p>
@@ -51,8 +60,9 @@ const Home = () => {
             src="assets/home-background.png"
             alt="home background"
             className="w-full max-w-[500px] lg:max-w-[700px]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, delay: 0.5 } }}
+            variants={bounceUp}
+            initial="hide"
+            animate={isInView ? 'show' : 'hide'}
           />
         </div>
       </div>
