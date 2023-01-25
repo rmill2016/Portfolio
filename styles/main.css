@@ -1,6 +1,3 @@
-/* Webfonts */
-@import '_fonts.css';
-
 /* Tailwind base/components */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -32,25 +29,25 @@
     @apply bg-transparent border border-white rounded-full rounded-tl-none py-2 pl-6 pr-10 after:caret-right-clear text-white;
   }
   p {
-    @apply text-base md:text-lg;
+    @apply text-base md:text-lg lg:text-2xl;
   }
   h6 {
-    @apply text-lg md:text-2xl;
+    @apply text-lg md:text-2xl lg:text-3xl;
   }
   h5 {
-    @apply text-2xl md:text-3xl;
+    @apply text-2xl md:text-3xl lg:text-4xl;
   }
   h4 {
-    @apply text-3xl md:text-4xl;
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
   h3 {
-    @apply text-4xl md:text-5xl;
+    @apply text-4xl md:text-5xl lg:text-6xl;
   }
   h2 {
-    @apply text-5xl md:text-6xl;
+    @apply text-5xl md:text-6xl lg:text-7xl;
   }
   h1 {
-    @apply text-6xl md:text-7xl;
+    @apply text-6xl md:text-7xl lg:text-8xl;
   }
 }
 

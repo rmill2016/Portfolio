@@ -1,11 +1,27 @@
-export const fade = {
-  initial: { opacity: 0 },
-  enter: {
-    opacity: 1,
-    transition: { duration: 0.4, ease: [0.83, 0, 0.17, 1] },
-  },
-  exit: {
+export const staggerLeft = {
+  hide: {
     opacity: 0,
-    transition: { duration: 0.4, ease: [0.83, 0, 0.17, 1] },
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+}
+
+export const leftItems = {
+  hide: {
+    opacity: 0,
+    x: -20,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      ease: 'ease-in-out',
+    },
   },
 }
