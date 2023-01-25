@@ -1,0 +1,90 @@
+import { motion } from 'framer-motion'
+
+const staggerLeft = {
+  hide: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+}
+
+const leftItems = {
+  hide: {
+    opacity: 0,
+    x: -20,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      ease: 'ease-in-out',
+    },
+  },
+}
+
+const Home = () => {
+  return (
+    <section className="bg-dark">
+      <div className="w-full h-full flex flex-col justify-around lg:grid lg:grid-cols-[1fr_700px] lg:grid-flow-col">
+        <motion.div
+          className="flex flex-col justify-center items-start w-full h-full gap-4 pt-20 relative lg:pb-40 lg:gap-8"
+          variants={staggerLeft}
+          initial="hide"
+          animate="show"
+          onAnimationStart={() => (document.body.style.overflow = 'hidden')}
+          onAnimationComplete={() => (document.body.style.overflow = 'visible')}
+        >
+          <motion.p className="text-white inline-flex items-center gap-3" variants={leftItems}>
+            {' '}
+            <motion.img
+              src="assets/icon-hand.png"
+              alt="wave"
+              className="h-8"
+              initial={{}}
+              animate={{
+                rotateZ: [-10, 0],
+                transition: {
+                  delay: 1,
+                  repeat: 2,
+                  duration: 0.5,
+                },
+              }}
+            />
+            Hello!
+          </motion.p>
+          <motion.h3 className="text-white" variants={leftItems}>
+            I'm Ryan Mill
+          </motion.h3>
+          <motion.p className="text-white" variants={leftItems}>
+            and I develop products for the web
+          </motion.p>
+          <motion.div className="flex justify-start w-full h-fit gap-6" variants={leftItems}>
+            <a href="#work">
+              <button className="filled">Past work</button>
+            </a>
+            <a href="#about">
+              <button className="outlined">Learn More</button>
+            </a>
+          </motion.div>
+        </motion.div>
+        <div className="flex-center">
+          <motion.img
+            src="assets/home-background.png"
+            alt="home background"
+            className="w-full max-w-[500px] lg:max-w-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, delay: 0.5 } }}
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Home
