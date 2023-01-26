@@ -132,7 +132,7 @@ const Tech = () => {
             </Carousel>
           </div>
           <motion.div
-            className="flex w-full justify-between items-center h-fit max-w-screen-lg mx-auto -mb-20 lg:-mb-48"
+            className="hidden md:flex w-full justify-between items-center h-fit max-w-screen-lg mx-auto -mb-20 lg:-mb-48"
             variants={staggerDropIn}
             initial="hide"
             animate={isInView ? 'show' : 'hide'}
@@ -175,7 +175,7 @@ const Tech = () => {
             </motion.div>
           </motion.div>
           <motion.div
-            className="grid w-fit h-fit place-items-center relative mx-auto"
+            className="hidden md:grid w-fit h-fit place-items-center relative mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={
               isInView
