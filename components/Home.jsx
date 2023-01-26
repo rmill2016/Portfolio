@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <section ref={container} className="bg-dark">
       <div
-        className="w-full h-full flex flex-col justify-around lg:grid lg:grid-cols-[1fr_700px] lg:grid-flow-col max-w-screen-2xl mx-auto"
+        className="w-full h-full flex flex-col justify-around lg:grid lg:grid-cols-[1fr_600px] lg:grid-flow-col max-w-screen-2xl mx-auto"
         ref={target}
       >
         <motion.div
