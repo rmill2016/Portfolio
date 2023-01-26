@@ -1,127 +1,105 @@
-import React from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import React, { useEffect, useRef } from 'react'
+import { AnimatePresence, motion, useInView } from 'framer-motion'
 import Carousel from 'framer-motion-carousel'
+import { bounceUp } from '@/helpers/transitions'
 
-const frontend = {
-  title: 'Frontend',
-  images: [
-    {
-      id: 1,
-      src: 'icon-typescript.svg',
-    },
-    {
-      id: 1,
-      src: 'icon-typescript.svg',
-    },
-    {
-      id: 2,
-      src: 'icon-javascript.svg',
-    },
-    {
-      id: 3,
-      src: 'icon-tailwind.svg',
-    },
-    {
-      id: 4,
-      src: 'icon-html.svg',
-    },
-    {
-      id: 5,
-      src: 'icon-sass.svg',
-    },
-    {
-      id: 6,
-      src: 'icon-next.svg',
-    },
-    {
-      id: 7,
-      src: 'icon-react.svg',
-    },
-    {
-      id: 8,
-      src: 'icon-css.svg',
-    },
-  ],
-}
-
-const backend = [
+let techstackArray = [
   {
-    id: 1,
-    src: 'icon-aws.svg',
-    alt: 'AWS',
+    title: 'Frontend',
+    images: [
+      { src: 'icon-typescript.svg', alt: 'Typescript' },
+      { src: 'icon-javascript.svg', alt: 'Javascript' },
+      { src: 'icon-html.svg', alt: 'HTML' },
+      { src: 'icon-sass.svg', alt: 'Sass' },
+      { src: 'icon-next.svg', alt: 'Next' },
+      { src: 'icon-react.svg', alt: 'React' },
+      { src: 'icon-css.svg', alt: 'CSS' },
+    ],
   },
   {
-    id: 2,
-    src: 'icon-azure.svg',
-    alt: 'Azure',
+    title: 'Backend',
+    images: [
+      { src: 'icon-aws.svg', alt: 'AWS' },
+      { src: 'icon-azure.svg', alt: 'Azure' },
+      { src: 'icon-node.svg', alt: 'Node' },
+      { src: 'icon-firebase.svg', alt: 'Firebase' },
+      { src: 'icon-mongo.svg', alt: 'MongoDB' },
+    ],
   },
   {
-    id: 3,
-    src: 'icon-node.svg',
-    alt: ' Node',
-  },
-  {
-    id: 4,
-    src: 'icon-firebase.svg',
-    alt: 'Firebase',
-  },
-  {
-    id: 5,
-    src: 'icon-mongo.svg',
-    alt: 'MongoDB',
-  },
-]
-
-const design = [
-  {
-    id: 1,
-    src: 'icon-photoshop.svg',
-    alt: 'Adobe Photoshop',
-  },
-  {
-    id: 2,
-    src: 'icon-framer.svg',
-    alt: 'Framer Motion',
-  },
-  {
-    id: 3,
-    src: 'icon-figma.svg',
-    alt: 'Figma',
+    title: 'Design',
+    images: [
+      { src: 'icon-photoshop.svg', alt: 'Adobe Photoshop' },
+      { src: 'icon-framer.svg', alt: 'Framer Motion' },
+      { src: 'icon-figma.svg', alt: 'Figma' },
+    ],
   },
 ]
 
 const Tech = () => {
+  const container = useRef(null)
+  const target = useRef(null)
+  const isInView = useInView(target, { root: container.current, amount: 0.5 })
   return (
-    <section className="bg-dark relative ">
+    <section ref={container} className="bg-dark relative ">
       <div
         className="absolute hidden md:inline-block md:-top-10 lg:-top-14 left-0 bg-dark w-full h-20"
         style={{ clipPath: 'polygon(0 50%, 100% 0, 100% 100%, 0 100%)' }}
       ></div>
-      <div className="grid grid-cols-1 grid-flow-row w-full h-full py-24 place-items-start">
-        <h3 className="text-white font-lora italic mx-auto">Tech Stack</h3>
-        <div className="w-full h-full relative flex flex-col justify-end">
-          <img
-            src="assets/sitting-image.png"
-            alt="sitting image"
-            className="w-full h-auto max-w-[200px] absolute z-10 -top-20 left-0 right-0 mx-auto"
-          />
-          <div
-            className="w-auto mx-4 aspect-square from-dark to-slate-400 bg-gradient-to-b"
-            style={{ clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)' }}
+      <AnimatePresence>
+        <div
+          className="grid grid-cols-1 grid-flow-row place-items-center w-full h-full md:grid-rows-3 md:grid-flow-row"
+          ref={target}
+        >
+          <motion.h3
+            className="text-white font-lora italic mx-auto"
+            variants={bounceUp}
+            initial="hide"
+            animate={isInView ? 'show' : 'hide'}
           >
+            Tech Stack
+          </motion.h3>
+          <div className="w-full h-full relative flex flex-col justify-end md:hidden z-0">
+            <motion.img
+              src="assets/sitting-image.png"
+              alt="sitting image"
+              variants={bounceUp}
+              initial="hide"
+              animate={isInView ? 'show' : 'hide'}
+              className="w-full h-auto max-w-[300px] absolute z-[1] -top-20 left-0 right-0 mx-auto pointer-events-none"
+            />
+
             <Carousel
-              interval={3000}
+              interval={5000}
               renderDots={() => null}
               renderArrowLeft={() => null}
               renderArrowRight={() => null}
             >
-              {[0, 1, 2].map((value, index) => (
-                <div className="w-full h-full grid place-content-center">hello</div>
+              {techstackArray.map((item, index) => (
+                <div
+                  key={index}
+                  className={
+                    isInView ? 'flex flex-col w-full h-full justify-center pt-20 items-center gap-2' : 'hidden'
+                  }
+                >
+                  <h3 className="text-teal font-bold">{item.title}</h3>
+                  <div className="grid grid-cols-4 grid-flow-row gap-4 ">
+                    {item.images.map((image, index) => (
+                      <motion.img
+                        key={index}
+                        className="w-10 aspect-square"
+                        src={`assets/${image.src}`}
+                        alt={image.alt}
+                        whileHover={{ scale: 1.2 }}
+                      />
+                    ))}
+                  </div>
+                </div>
               ))}
             </Carousel>
           </div>
         </div>
-      </div>
+      </AnimatePresence>
     </section>
   )
 }

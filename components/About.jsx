@@ -6,7 +6,7 @@ const text = [
   {
     id: 1,
     content:
-      'Hello! My name is Ryan Mill and I develop responsive, engaging websites. I began my development journey by taking my first Java object oriented programming course in high school.',
+      'Hello and thanks for stopping by! My name is Ryan Mill and I develop responsive, engaging websites. I began my development journey by taking my first Java object oriented programming course in high school.',
   },
   {
     id: 2,
