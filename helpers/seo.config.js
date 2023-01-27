@@ -1,6 +1,6 @@
 export default {
-  defaultTitle: "Ryan's Portfolio site",
-  description: 'Simple web application built with NextJS, Tailwind, and Framer',
+  defaultTitle: 'Ryan Mill | Frontend Developer',
+  description: "Create your business today with Ryan's Web Services",
   titleTemplate: '%s | Next x Tailwind x Motion',
   openGraph: {
     type: 'website',

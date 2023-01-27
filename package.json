@@ -30,6 +30,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@emailjs/browser": "^3.10.0",
     "autoprefixer": "^10.4.2",
     "framer-motion": "^8.5.0",
     "framer-motion-carousel": "^2.0.1",

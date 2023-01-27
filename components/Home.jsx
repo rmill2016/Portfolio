@@ -41,7 +41,7 @@ const Home = () => {
             Hello!
           </motion.p>
           <motion.h2 className="text-white" variants={leftItems}>
-            I'm <span className="text-teal font-lora italic">Ryan Mill</span>
+            I'm <span className="text-teal">Ryan Mill</span>
           </motion.h2>
           <motion.p className="text-white" variants={leftItems}>
             and I develop products for the web
