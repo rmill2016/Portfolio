@@ -115,7 +115,7 @@ const Services = () => {
             </ul>
             <div className="dashed" />
             <h4>$200</h4>
-            <button className="services-button bg-slate-300">Choose</button>
+            <button className="services-button font-hind bg-slate-300">Basic</button>
           </motion.div>
           <motion.div
             className="services-card bg-dark"
@@ -135,13 +135,13 @@ const Services = () => {
               {ecommerceList.map((item, index) => (
                 <div key={index} className="inline-flex gap-2 items-start">
                   <img src="assets/icon-lightcheck.svg" alt="dark check" />
-                  <li className="flex items-start justify-start gap-2 group link-l-r flex-col text-white">{item}</li>
+                  <li className="flex items-start justify-start gap-2 group link-l-r-w flex-col text-white">{item}</li>
                 </div>
               ))}
             </ul>
             <div className="dashed" />
             <h4 className="text-white">$500</h4>
-            <button className="services-button bg-teal">Choose</button>
+            <button className="services-button font-hind bg-teal">Standard</button>
           </motion.div>
           <motion.div
             className="services-card bg-white"
@@ -163,8 +163,8 @@ const Services = () => {
               ))}
             </ul>
             <div className="dashed" />
-            <h5>Contact for details</h5>
-            <button className="services-button bg-slate-300">Choose</button>
+            <h5>Get a Quote</h5>
+            <button className="services-button font-hind bg-slate-300">Premium</button>
           </motion.div>
         </div>
       </div>
