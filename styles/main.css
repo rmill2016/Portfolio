@@ -95,6 +95,9 @@
   .link-l-r {
     @apply relative after:content-[''] after:block after:mr-auto after:h-px after:w-0 after:bg-transparent after:duration-300 hover:after:w-full hover:after:bg-dark;
   }
+  .link-l-r-w {
+    @apply relative after:content-[''] after:block after:mr-auto after:h-px after:w-0 after:bg-transparent after:duration-300 hover:after:w-full hover:after:bg-white;
+  }
   .services-card {
     @apply w-full max-w-[384px] max-h-[576px] aspect-[2/3] rounded-2xl flex flex-col justify-start items-start gap-8 py-4 px-6 shadow-sm mx-auto;
   }
