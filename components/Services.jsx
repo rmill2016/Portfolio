@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { bounceUp, staggerDropIn } from '@/helpers/transitions'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper'
 
 let landingList = [
   '1-3 fully responsive pages',
@@ -26,12 +25,6 @@ let businessList = [
 ]
 
 const Services = () => {
-  const [size, setSize] = useState(null)
-  useEffect(() => {
-    const innerWidth = window.innerWidth
-    setSize(innerWidth)
-  }, [])
-
   return (
     <section id="services" className="bg-white relative z-[1]">
       <img
@@ -41,13 +34,7 @@ const Services = () => {
       />
       <div className="grid grid-rows-[100px_1fr] grid-flow-row w-full h-full place-items-center pt-20 relative z-[1]">
         <h3 className="text-black w-fit mx-auto italic">Services & Pricing</h3>
-        <Swiper
-          slidesPerView={size < 768 ? 1 : 2}
-          loop={true}
-          autoplay={true}
-          spaceBetween={50}
-          className="w-full h-fit lg:hidden"
-        >
+        <Swiper slidesPerView={'auto'} loop={true} autoplay={true} spaceBetween={50} className="w-full h-fit lg:hidden">
           <SwiperSlide className="services-card bg-white">
             <h4 className="w-fit mx-auto text-[#B49386]">
               <img src="assets/icon-landingpage.svg" alt="landingpage icon" className="inline-block pr-2" />
@@ -106,8 +93,13 @@ const Services = () => {
             <button className="services-button bg-slate-300">Choose</button>
           </SwiperSlide>
         </Swiper>
-        <div className="hidden lg:grid grid-cols-3 grid-flow-row w-full h-full">
-          <div className="services-card bg-white">
+        <div className="hidden lg:grid grid-cols-3 grid-flow-row w-full h-full place-items-center max-w-[1550px] mx-auto">
+          <motion.div
+            className="services-card bg-white"
+            initial={{ y: 0 }}
+            whileFocus={{ y: -50 }}
+            whileHover={{ y: -50 }}
+          >
             <h4 className="w-fit mx-auto text-[#B49386]">
               <img src="assets/icon-landingpage.svg" alt="landingpage icon" className="inline-block pr-2" />
               Landing page
@@ -124,8 +116,13 @@ const Services = () => {
             <div className="dashed" />
             <h4>$200</h4>
             <button className="services-button bg-slate-300">Choose</button>
-          </div>
-          <div className="services-card bg-dark">
+          </motion.div>
+          <motion.div
+            className="services-card bg-dark"
+            initial={{ y: 0 }}
+            whileFocus={{ y: -50 }}
+            whileHover={{ y: -50 }}
+          >
             <span className="absolute top-2 right-2 text-white text-xs border border-white rounded-2xl p-1">
               Most popular!
             </span>
@@ -145,8 +142,13 @@ const Services = () => {
             <div className="dashed" />
             <h4 className="text-white">$500</h4>
             <button className="services-button bg-teal">Choose</button>
-          </div>
-          <div className="services-card bg-white">
+          </motion.div>
+          <motion.div
+            className="services-card bg-white"
+            initial={{ y: 0 }}
+            whileFocus={{ y: -50 }}
+            whileHover={{ y: -50 }}
+          >
             <h4 className="w-fit mx-auto text-[#B49386]">
               <img src="assets/icon-businesspackage.svg" alt="landingpage icon" className="inline-block pr-2" />
               Business
@@ -163,7 +165,7 @@ const Services = () => {
             <div className="dashed" />
             <h5>Contact for details</h5>
             <button className="services-button bg-slate-300">Choose</button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
