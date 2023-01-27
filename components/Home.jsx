@@ -40,9 +40,9 @@ const Home = () => {
             />
             Hello!
           </motion.p>
-          <motion.h3 className="text-white" variants={leftItems}>
+          <motion.h2 className="text-white" variants={leftItems}>
             I'm <span className="text-teal font-lora italic">Ryan Mill</span>
-          </motion.h3>
+          </motion.h2>
           <motion.p className="text-white" variants={leftItems}>
             and I develop products for the web
           </motion.p>
