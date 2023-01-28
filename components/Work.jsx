@@ -69,7 +69,9 @@ const Work = () => {
         transition={{ duration: 2 }}
         onAnimationComplete={cycle2}
       />
-      <div className="grid grid-rows-[200px_1fr] grid-flow-row w-full h-full place-items-center pt-28 max-w-[1550px] mx-auto">
+
+      <div className="grid grid-rows-[200px_1fr] grid-flow-row w-full h-full place-items-center max-w-[1550px] mx-auto">
+
         <motion.h2
           className="text-white"
           variants={leftItems}
