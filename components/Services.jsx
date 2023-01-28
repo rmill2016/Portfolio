@@ -32,6 +32,7 @@ const Services = () => {
         alt="services background"
         className="absolute w-full h-full inset-0 object-cover z-0 pointer-events-none"
       />
+
       <div className="grid grid-rows-[100px_1fr] grid-flow-row w-full h-full place-items-center relative z-[1]">
         <h3 className="text-black w-fit mx-auto italic">Services & Pricing</h3>
         <Swiper
@@ -42,6 +43,7 @@ const Services = () => {
           centeredSlides={true}
           className="w-full h-fit lg:hidden"
         >
+
           <SwiperSlide className="services-card bg-white">
             <h4 className="w-fit mx-auto text-[#B49386]">
               <img src="assets/icon-landingpage.svg" alt="landingpage icon" className="inline-block pr-2" />

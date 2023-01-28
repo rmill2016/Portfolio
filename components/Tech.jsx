@@ -6,6 +6,7 @@ import SwiperCore, { Autoplay } from 'swiper'
 
 SwiperCore.use([Autoplay])
 
+
 let techstackArray = [
   {
     id: 1,
@@ -87,7 +88,9 @@ const Tech = () => {
         style={{ clipPath: 'polygon(0 50%, 100% 0, 100% 100%, 0 100%)' }}
       ></div>
       <div
+
         className="grid grid-cols-1 grid-flow-row place-items-start w-full h-full md:grid-rows-[100px_1fr_1fr] md:grid-flow-row"
+
         ref={target}
       >
         <motion.h3
@@ -98,7 +101,9 @@ const Tech = () => {
         >
           Tech Stack
         </motion.h3>
+
         <div className="w-full h-full relative flex flex-col justify-end md:hidden z-0 pb-10">
+
           <motion.img
             src="assets/sitting-image.png"
             alt="sitting image"
@@ -113,6 +118,7 @@ const Tech = () => {
               <SwiperSlide
                 key={item?.id}
                 className={isInView ? 'flex flex-col w-full h-full justify-center pt-20  items-center gap-2' : 'hidden'}
+
               >
                 <h3 className="text-teal font-bold">{item.title}</h3>
                 <div className="grid grid-cols-4 grid-flow-row gap-4 ">
@@ -126,9 +132,11 @@ const Tech = () => {
                     />
                   ))}
                 </div>
+
               </SwiperSlide>
             ))}
           </Swiper>
+
         </div>
         <motion.div
           className="hidden md:flex w-full justify-between items-center h-fit max-w-screen-lg mx-auto -mb-20 lg:-mb-48"
