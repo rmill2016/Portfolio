@@ -7,7 +7,6 @@ import Tech from '@/components/Tech'
 import Services from '@/components/Services'
 import Work from '@/components/Work'
 import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
 
 const App = () => {
   useEffect(() => {
@@ -22,7 +21,6 @@ const App = () => {
       <Services />
       <Work />
       <Contact />
-      <Footer />
     </>
   )
 }

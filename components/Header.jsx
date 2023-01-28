@@ -207,13 +207,23 @@ const Header = () => {
                     <a
                       onClick={(e) => {
                         e.preventDefault()
-                        setTimeout(() => (window.location = `${value?.to}`), 1000)
+                        setTimeout(() => (window.location = `${value?.to}`), 1500)
                       }}
                     >
                       {value?.name}
                     </a>
                   </motion.li>
                 ))}
+                <motion.button className="filled text-2xl after:mt-1" variants={menuLinks} onClick={cycleOpen}>
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setTimeout(() => (window.location = '#contact'), 1500)
+                    }}
+                  >
+                    Contact
+                  </a>
+                </motion.button>
               </motion.ul>
             </motion.aside>
           )}
