@@ -22,7 +22,7 @@ const Contact = () => {
   return (
     <>
       <section id="contact" className="bg-dark">
-        <div className="grid w-full h-full grid-rows-[auto_1fr] grid-flow-row pt-24 max-w-screen-md mx-auto  place-items-center ">
+        <div className="grid w-full h-full grid-rows-[auto_1fr] grid-flow-row  max-w-screen-md mx-auto  place-items-center ">
           <div className="text-white leading-normal text-center capitalize">
             <h4>want to reach out?</h4>
             <h4>send an inquiry below!</h4>

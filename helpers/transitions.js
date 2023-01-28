@@ -19,8 +19,8 @@ export const leftItems = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring',
-      stiffness: 100,
+      type: 'tween',
+      duration: 0.5,
     },
   },
 }
