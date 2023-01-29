@@ -7,7 +7,7 @@
 
 @layer components {
   body {
-    @apply font-montserrat text-black;
+    @apply font-montserrat text-black min-h-screen min-h-[-webkit-fill-available];
   }
 
   section {
@@ -99,14 +99,10 @@
     @apply relative after:content-[''] after:block after:mr-auto after:h-px after:w-0 after:bg-transparent after:duration-300 hover:after:w-full hover:after:bg-white;
   }
   .services-card {
-    @apply w-5/6 h-auto max-w-[384px] max-h-[576px] aspect-[5/6] rounded-2xl flex flex-col justify-start items-start gap-4 py-4 px-6 shadow-sm;
+    @apply w-[300px] h-auto max-w-[384px] max-h-[576px] aspect-[2/3] rounded-2xl flex flex-col justify-start items-start gap-4 py-4 px-6 shadow-sm;
   }
   .services-button {
     @apply w-full aspect-[6/1] rounded-full rounded-tl-none flex-center hover:scale-105 focus:scale-105 hover:shadow-md;
-  }
-  .h-screen {
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
   }
 }
 

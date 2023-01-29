@@ -3,12 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { bounceUp, staggerDropIn } from '@/helpers/transitions'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-let landingList = [
-  '1-3 fully responsive pages',
-  'Smooth, attractive animations to set yourself apart from the competition',
-  'Commercial free images and icons',
-  '3 revisions',
-]
+let landingList = ['1-3 fully responsive pages', 'Fluid animations built with Tailwind and Framer', '3 revisions']
 
 let ecommerceList = [
   '3-6 fully responsive pages',
