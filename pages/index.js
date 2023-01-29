@@ -11,6 +11,8 @@ import Contact from '@/components/Contact'
 const App = () => {
   useEffect(() => {
     scrollTo(0, 0)
+
+
   }, [])
   return (
     <>

@@ -13,7 +13,9 @@ const Home = () => {
         ref={target}
       >
         <motion.div
+
           className="flex flex-col justify-center items-start w-full h-full gap-4 relative lg:pb-40 lg:gap-8"
+
           variants={staggerLeft}
           initial="hide"
           animate={isInView ? 'show' : 'hide'}

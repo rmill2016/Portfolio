@@ -33,6 +33,7 @@
     "@emailjs/browser": "^3.10.0",
     "autoprefixer": "^10.4.2",
     "framer-motion": "^8.5.0",
+    "framer-motion-carousel": "^2.0.1",
     "postcss": "^8.4.5",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.0",
