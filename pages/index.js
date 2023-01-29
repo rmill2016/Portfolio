@@ -12,10 +12,6 @@ const App = () => {
   useEffect(() => {
     scrollTo(0, 0)
 
-    document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px')
-    window.addEventListener('resize', () => {
-      document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px')
-    })
 
   }, [])
   return (

@@ -1,4 +1,4 @@
-import '@/styles/main.css'
+import '@/styles/styles.css'
 import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'

@@ -7,6 +7,7 @@ import SwiperCore, { Autoplay } from 'swiper'
 SwiperCore.use([Autoplay])
 
 
+
 let techstackArray = [
   {
     id: 1,

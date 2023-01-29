@@ -158,9 +158,13 @@ const Header = () => {
             ))}
           </ul>
           <div className="flex justify-end items-center">
-            <button ref={headerButtonRef} className="filled text-white">
-              Contact
-            </button>
+
+            <a href="#contact">
+              <button ref={headerButtonRef} className="filled text-white">
+                Contact
+              </button>
+            </a>
+
           </div>
         </nav>
         <AnimatePresence>
