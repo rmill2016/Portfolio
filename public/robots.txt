@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ryanswebservices.dev
+
+# Sitemaps
+Sitemap: https://ryanswebservices.dev/sitemap.xml
