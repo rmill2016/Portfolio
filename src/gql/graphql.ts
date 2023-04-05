@@ -2661,6 +2661,7 @@ export type WorktileRecord = RecordInterface & {
   details?: Maybe<WorktileModelDetailsField>;
   id: Scalars['ItemId'];
   images: Array<FileField>;
+  link?: Maybe<LinkRecord>;
   role?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
 };

@@ -109,6 +109,13 @@ export const QUERY_WORKPAGE = gql`
         details {
           value
         }
+        link {
+          title
+          to
+          icon {
+            ${FRAGMENT_ASSET}
+          }
+        }
       }
     }
   }

@@ -21,7 +21,7 @@ const Slideshow = (projects: Props) => {
                     width={500}
                     height={250}
                     priority
-                    className="w-auto h-full"
+                    className="object-cover"
                   />
                 </li>
               ))}
